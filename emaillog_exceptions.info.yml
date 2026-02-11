@@ -1,0 +1,7 @@
+name: 'Email Log Exceptions'
+type: module
+description: 'Configurable string exceptions for emaillog notification emails.'
+core_version_requirement: ^10 || ^11
+package: Development
+dependencies:
+  - emaillog

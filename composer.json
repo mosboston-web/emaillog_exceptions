@@ -1,0 +1,8 @@
+{
+  "name": "mosboston-web/emaillog_exceptions",
+  "type": "drupal-module",
+  "description": "Configurable string exceptions for emaillog notification emails.",
+  "require": {
+    "drupal/core": "^10 || ^11"
+  }
+}
