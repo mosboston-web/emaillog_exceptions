@@ -1,0 +1,11 @@
+emaillog_exceptions.configuration:
+  title: "Settings"
+  route_name: emaillog.configuration
+  base_route: emaillog.configuration
+  weight: 0
+
+emaillog_exceptions.settings:
+  title: "Exceptions"
+  route_name: emaillog_exceptions.settings
+  base_route: emaillog.configuration
+  weight: 10

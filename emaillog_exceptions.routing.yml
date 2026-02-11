@@ -1,0 +1,9 @@
+emaillog_exceptions.settings:
+  path: "/admin/config/development/emaillog/exceptions"
+  defaults:
+    _form: '\Drupal\emaillog_exceptions\Form\EmailLogExceptionsForm'
+    _title: "Email Log Exceptions"
+  requirements:
+    _permission: "administer emaillog"
+  options:
+    _admin_route: TRUE
