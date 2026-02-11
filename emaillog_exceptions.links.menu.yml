@@ -1,0 +1,6 @@
+emaillog_exceptions.settings:
+  title: "Exceptions"
+  description: "Configure strings to ignore for emaillog notifications."
+  parent: emaillog.config_menu
+  route_name: emaillog_exceptions.settings
+  weight: 10

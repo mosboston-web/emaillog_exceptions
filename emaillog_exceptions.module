@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Implements configurable exceptions for emaillog notifications.
+ */
+
+/**
+ * Implements hook_mail_alter().
+ */
+function emaillog_exceptions_mail_alter(array &$message) {
+  if ($message['module'] === 'emaillog') {
+    $exceptions = \Drupal::config('emaillog_exceptions.settings')->get('exceptions') ?: [];
+    foreach ($message['body'] as $line) {
+      foreach ($exceptions as $ignore) {
+        if (stristr($line, $ignore)) {
+          \Drupal::logger('emaillog_exceptions')->info('Logging email not sent because it contains the string: %string', ['%string' => $ignore]);
+          $message['send'] = FALSE;
+          break 2;
+        }
+      }
+    }
+  }
+}
