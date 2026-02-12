@@ -57,7 +57,7 @@ class EmailLogExceptionsForm extends ConfigFormBase {
    *   The current state of the form.
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $exceptions = array_filter(array_map('trim', explode("\n", $form_state->getValue('exceptions'))));
+    $exceptions = array_filter(array_map('trim', explode("\n", $form_state->getValue('exceptions'))), 'strlen');
     $this->config('emaillog_exceptions.settings')
       ->set('exceptions', $exceptions)
       ->save();
