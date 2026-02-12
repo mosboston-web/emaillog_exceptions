@@ -14,7 +14,7 @@ function emaillog_exceptions_mail_alter(array &$message) {
     foreach ($message['body'] as $line) {
       foreach ($exceptions as $ignore) {
         if (stristr($line, $ignore)) {
-          \Drupal::logger('emaillog_exceptions')->info('Logging email not sent because it contains the string: %string', ['%string' => $ignore]);
+          \Drupal::logger('emaillog_exceptions')->info('Suppressed emaillog message "%subject" because its body contains configured exception string "%string".', ['%string' => $ignore, '%subject' => $message['subject'] ?? '']);
           $message['send'] = FALSE;
           break 2;
         }
