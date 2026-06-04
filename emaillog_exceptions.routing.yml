@@ -4,6 +4,6 @@ emaillog_exceptions.settings:
     _form: '\Drupal\emaillog_exceptions\Form\EmailLogExceptionsForm'
     _title: "Email Log Exceptions"
   requirements:
-    _permission: "administer emaillog"
+    _permission: "administer site configuration"
   options:
     _admin_route: TRUE
